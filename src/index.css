@@ -49,11 +49,14 @@ h1 {
   border: none;
   margin-right: 10px;
   width: 70%;
-  font-size: 16px;
+  font-size: 18px;
 }
 .input-container input:focus {
   outline: none;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+input::placeholder {
+  font-size: 18px;
 }
 
 .input-container button {

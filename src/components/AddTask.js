@@ -8,6 +8,7 @@ const AddTask = ({
   setTaskList,
   editMode,
   setEditMode,
+  darkMode,
 }) => {
   const handleChange = (e) => {
     const userInput = e.target.value;
@@ -58,6 +59,10 @@ const AddTask = ({
         name="task"
         onChange={handleChange}
         value={task.name || ""}
+        style={{
+          backgroundColor: darkMode && "#404040",
+          color: darkMode && "#fff",
+        }}
       />
       {editMode ? <button>Edit</button> : <button>Add</button>}
     </form>

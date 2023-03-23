@@ -60,7 +60,6 @@ h1 {
   border-radius: 5px;
   border: none;
   background-color: #e96479;
-  transition: 0.4s;
   color: #f5e9cf;
   font-size: 18px;
   font-weight: 700;
@@ -105,7 +104,6 @@ h1 {
   border-radius: 5px;
   border: none;
   background-color: #e96479;
-  transition: 0.4s;
   color: #f5e9cf;
   font-size: 16px;
   cursor: pointer;
@@ -136,7 +134,6 @@ h1 {
   border-radius: 5px;
   border: none;
   background-color: #e96479;
-  transition: 0.4s;
   color: #f5e9cf;
   font-size: 16px;
   cursor: pointer;

@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+import AddTask from "./components/AddTask";
+import ShowTask from "./components/ShowTask";
+
+import AssignmentIcon from "@mui/icons-material/Assignment";
+
+const App = () => {
+  const [task, setTask] = useState({});
+  const [taskList, setTaskList] = useState(
+    JSON.parse(localStorage.getItem("taskList")) || []
   );
-}
+  const [editMode, setEditMode] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem("taskList", JSON.stringify(taskList));
+  }, [taskList]);
+
+  return (
+    <>
+      <div className="main">
+        <div className="container">
+          <h1>
+            <AssignmentIcon sx={{ fontSize: "60px" }} />
+          </h1>
+          <AddTask
+            task={task}
+            setTask={setTask}
+            taskList={taskList}
+            setTaskList={setTaskList}
+            editMode={editMode}
+            setEditMode={setEditMode}
+          />
+          <ShowTask
+            task={task}
+            setTask={setTask}
+            taskList={taskList}
+            setTaskList={setTaskList}
+            editMode={editMode}
+            setEditMode={setEditMode}
+          />
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default App;

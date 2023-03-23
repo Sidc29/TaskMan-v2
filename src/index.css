@@ -1,13 +1,156 @@
 body {
+  background-color: #f5e9cf;
+  background-image: url("https://www.transparenttextures.com/patterns/white-leather.png");
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  color: #4d455d;
+  margin-top: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #7db9b6;
+  background-image: url("https://www.transparenttextures.com/patterns/white-leather.png");
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 1000px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.input-container input {
+  padding: 15px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 10px;
+  width: 70%;
+  font-size: 16px;
+}
+.input-container input:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.input-container button {
+  padding: 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: #e96479;
+  color: #f5e9cf;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tasks-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  width: 100%;
+}
+
+.task-card {
+  background-color: #4d455d;
+  background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: min-content;
+  gap: 15px;
+}
+
+.task-card h2 {
+  text-align: center;
+  color: #f5e9cf;
+  margin: 0 auto;
+}
+
+.task-card p {
+  color: #f5e9cf;
+  margin: 0 auto;
+}
+
+.task-card button {
+  padding: 6px;
+  border-radius: 5px;
+  border: none;
+  background-color: #e96479;
+  color: #f5e9cf;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.task-card button:first-child {
+  margin-right: 10px;
+}
+
+.clear-tasks {
+  background-color: rgba(77, 69, 93, 0.423);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0;
+}
+.clear-tasks h3 {
+  margin-left: 10px;
+  color: #fff;
+}
+
+.clear-tasks button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #e96479;
+  color: #f5e9cf;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .tasks-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .task-card {
+    height: min-content;
+  }
+  .task-card h2 {
+    font-size: 18px;
+  }
+
+  .task-card p {
+    font-size: 14px;
+  }
 }

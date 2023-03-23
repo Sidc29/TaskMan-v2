@@ -153,9 +153,9 @@ h1 {
 }
 
 .label {
-  width: 40px;
-  height: 16px;
-  background-color: #282828;
+  width: 38px;
+  height: 12px;
+  background-color: #2828287a;
   transition: 0.4s;
   display: flex;
   border-radius: 50px;
@@ -168,11 +168,11 @@ h1 {
 }
 
 .ball {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   background-color: #fff;
   position: absolute;
-  top: 3px;
+  top: 2px;
   left: 2px;
   border-radius: 50%;
   transition: transform 0.2s linear;
@@ -184,7 +184,7 @@ h1 {
 }
 
 .fa-moon {
-  color: #d3d3d3;
+  color: #e4cc52;
 }
 
 .fa-sun {

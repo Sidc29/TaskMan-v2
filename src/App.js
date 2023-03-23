@@ -45,7 +45,10 @@ const App = () => {
           <label htmlFor="checkbox" className="label">
             <i className="fas fa-moon"></i>
             <i className="fas fa-sun"></i>
-            <div className="ball"></div>
+            <div
+              className="ball"
+              style={{ backgroundColor: darkMode && "#D9D9D9" }}
+            ></div>
           </label>
         </div>
         <div

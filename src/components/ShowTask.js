@@ -2,6 +2,7 @@ import React from "react";
 
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
+import _ from "lodash";
 
 const ShowTask = ({
   setTask,
@@ -11,14 +12,30 @@ const ShowTask = ({
   darkMode,
 }) => {
   const deleteTask = (id) => {
-    const updatedTasks = taskList.filter((todo) => todo.id !== id);
-    setTaskList(updatedTasks);
+    let warning = "Are you sure you want to delete this task?";
+    // eslint-disable-next-line no-restricted-globals
+    if (confirm(warning) === true) {
+      const updatedTasks = taskList.filter((todo) => todo.id !== id);
+      setTaskList(updatedTasks);
+    } else {
+      return;
+    }
   };
 
   const editTask = (id) => {
     setEditMode(true);
     const selectedTask = taskList.find((todo) => todo.id === id);
     setTask(selectedTask);
+  };
+
+  const handleClearTasks = () => {
+    let warning = "Are you sure you want to clear all tasks?";
+    // eslint-disable-next-line no-restricted-globals
+    if (confirm(warning) === true) {
+      setTaskList([]);
+    } else {
+      return;
+    }
   };
 
   return (
@@ -34,7 +51,7 @@ const ShowTask = ({
           </h3>
         )}
         {taskList.length > 0 && (
-          <button onClick={() => setTaskList([])}>Clear tasks</button>
+          <button onClick={handleClearTasks}>Clear tasks</button>
         )}
       </div>
       <div className="tasks-container">
@@ -44,14 +61,19 @@ const ShowTask = ({
             key={todoItem.id}
             style={{ backgroundColor: darkMode && "#282828" }}
           >
-            <h2>{todoItem.name}</h2>
+            <h2>{_.capitalize(todoItem.name)}</h2>
             <p>{todoItem.time}</p>
             <div>
-              <button onClick={() => editTask(todoItem.id)}>
-                <EditIcon />
+              <button onClick={() => editTask(todoItem.id)} title="Edit task">
+                <EditIcon sx={{ color: "#e8bb59", fontSize: "30px" }} />
               </button>
-              <button onClick={() => deleteTask(todoItem.id)}>
-                <DeleteIcon />
+              <button
+                onClick={() => deleteTask(todoItem.id)}
+                title="Delete task"
+              >
+                <DeleteIcon
+                  sx={{ color: "rgb(224, 66, 66)", fontSize: "30px" }}
+                />
               </button>
             </div>
           </div>

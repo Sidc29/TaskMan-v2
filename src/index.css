@@ -57,7 +57,7 @@ h1 {
 }
 input::placeholder {
   color: grey;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .taskStatus {
@@ -208,10 +208,11 @@ input::placeholder {
   border: none;
   background-color: rgba(74, 68, 86, 0.354);
   opacity: 0.4;
-  color: #f5e9cf;
+  color: #fff;
   font-size: 16px;
   cursor: pointer;
   width: 100%;
+  transition: 0.4s;
 }
 
 /* Dark Mode Toggle */

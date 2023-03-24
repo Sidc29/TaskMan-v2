@@ -122,7 +122,7 @@ const ShowTask = ({
                 style={{
                   marginTop: "6px",
                   color:
-                    todoItem.status === "Completed" ? "#18ba49" : "#cf2d3e",
+                    todoItem.status === "Completed" ? "#249e49" : "#cf2d3e",
                 }}
               >
                 {todoItem.status === "Completed" ? (

@@ -28,13 +28,15 @@ const App = () => {
       document.querySelectorAll("input")[1].style.color = "#fff";
       // Task Status Select Background
       document.querySelector("select").style.backgroundColor = "#404040";
-      document.querySelector("option").style.color = "#fff";
+      document.querySelectorAll("option")[0].style.color = "#fff";
+      document.querySelectorAll("option")[1].style.color = "#fff";
     } else {
       // Body Background Color Change
       document.body.style.backgroundColor = "#f5e9cf";
       // Task Status Select Background
       document.querySelector("select").style.backgroundColor = "#fff";
-      document.querySelector("option").style.color = "grey";
+      document.querySelectorAll("option")[0].style.color = "grey";
+      document.querySelectorAll("option")[1].style.color = "grey";
     }
 
     localStorage.setItem("darkMode", JSON.stringify(darkMode));

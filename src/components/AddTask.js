@@ -72,8 +72,12 @@ const AddTask = ({
         onChange={(e) => setTask({ ...task, status: e.target.value })}
         value={task.status || "Pending"}
       >
-        <option value="Pending">Pending</option>
-        <option value="Completed">Completed</option>
+        <option className="statusOption" value="Pending">
+          Pending
+        </option>
+        <option className="statusOption" value="Completed">
+          Completed
+        </option>
       </select>
       {editMode ? <button>Edit</button> : <button>Add</button>}
     </form>

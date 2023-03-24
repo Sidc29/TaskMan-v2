@@ -12,7 +12,19 @@ const ShowTask = ({
   setTaskList,
   setEditMode,
   darkMode,
+  filterTasks,
+  setFilterTasks,
 }) => {
+  // TASKS LENGTH
+  const pendingTasks = () => {
+    const result = taskList.filter((todo) => todo.status === "Pending");
+    return result.length;
+  };
+  const completedTasks = () => {
+    const result = taskList.filter((todo) => todo.status === "Completed");
+    return result.length;
+  };
+
   const deleteTask = (id) => {
     let warning = "Are you sure you want to delete this task?";
     // eslint-disable-next-line no-restricted-globals
@@ -40,6 +52,16 @@ const ShowTask = ({
     }
   };
 
+  const filteredTasks = taskList.filter((task) => {
+    if (filterTasks === "All") {
+      return true;
+    } else if (filterTasks === "Pending") {
+      return task.status === "Pending";
+    } else {
+      return task.status === "Completed";
+    }
+  });
+
   return (
     <>
       <div className="clear-tasks">
@@ -54,8 +76,39 @@ const ShowTask = ({
           <button onClick={handleClearTasks}>Clear tasks</button>
         )}
       </div>
+      {taskList.length > 0 && (
+        <div className="tasks-filter">
+          <button
+            onClick={() => setFilterTasks("All")}
+            style={{
+              color: darkMode && "#b3b3b3",
+              opacity: filterTasks === "All" && "1",
+            }}
+          >
+            All
+          </button>
+          <button
+            onClick={() => setFilterTasks("Pending")}
+            style={{
+              color: darkMode && "#b3b3b3",
+              opacity: filterTasks === "Pending" && "1",
+            }}
+          >
+            Pending ({pendingTasks()})
+          </button>
+          <button
+            onClick={() => setFilterTasks("Completed")}
+            style={{
+              color: darkMode && "#b3b3b3",
+              opacity: filterTasks === "Completed" && "1",
+            }}
+          >
+            Completed ({completedTasks()})
+          </button>
+        </div>
+      )}
       <div className="tasks-container">
-        {taskList.map((todoItem) => (
+        {filteredTasks.map((todoItem) => (
           <div
             className="task-card"
             key={todoItem.id}

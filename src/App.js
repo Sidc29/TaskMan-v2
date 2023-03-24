@@ -14,6 +14,7 @@ const App = () => {
   const [darkMode, setDarkMode] = useState(
     JSON.parse(localStorage.getItem("darkMode")) || false
   );
+  const [filterTasks, setFilterTasks] = useState("All");
 
   useEffect(() => {
     localStorage.setItem("taskList", JSON.stringify(taskList));
@@ -85,6 +86,8 @@ const App = () => {
             setEditMode={setEditMode}
             darkMode={darkMode}
             setDarkMode={setDarkMode}
+            filterTasks={filterTasks}
+            setFilterTasks={setFilterTasks}
           />
         </div>
       </div>

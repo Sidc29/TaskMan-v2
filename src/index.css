@@ -191,6 +191,29 @@ input::placeholder {
   transform: translateY(2px);
 }
 
+.tasks-filter {
+  transition: 0.4s;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  width: 100%;
+  margin: 15px auto;
+}
+
+.tasks-filter button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(74, 68, 86, 0.354);
+  opacity: 0.4;
+  color: #f5e9cf;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
 /* Dark Mode Toggle */
 
 .toggle {
@@ -252,5 +275,8 @@ input::placeholder {
 
   .task-card p {
     font-size: 14px;
+  }
+  .tasks-filter button {
+    height: 60px;
   }
 }

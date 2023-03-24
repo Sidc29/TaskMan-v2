@@ -49,14 +49,41 @@ h1 {
   border: none;
   margin-right: 10px;
   width: 70%;
-  font-size: 18px;
+  font-size: 16px;
 }
 .input-container input:focus {
   outline: none;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 input::placeholder {
+  color: grey;
   font-size: 18px;
+}
+
+.taskStatus {
+  padding: 15px 1px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 10px;
+  font-size: 16px;
+  color: gray;
+  border-radius: 5px;
+  cursor: pointer;
+  border-right: 6px solid transparent;
+}
+.taskStatus:focus {
+  outline: none;
+}
+.taskStatus:active {
+  outline: none;
+}
+
+.statusMessage {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 
 .input-container button {
@@ -68,6 +95,13 @@ input::placeholder {
   font-size: 18px;
   font-weight: 700;
   cursor: pointer;
+}
+
+.input-container button:hover {
+  opacity: 0.9;
+}
+.input-container button:active {
+  transform: translateY(2px);
 }
 
 .tasks-container {
@@ -111,11 +145,18 @@ input::placeholder {
   color: #f5e9cf;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 10px;
 }
 
 .task-card button:first-child {
   margin-right: 10px;
+}
+
+.editBtn:hover {
+  opacity: 0.8;
+}
+
+.deleteBtn:hover {
+  opacity: 0.8;
 }
 
 .clear-tasks {
@@ -142,6 +183,12 @@ input::placeholder {
   font-size: 16px;
   cursor: pointer;
   margin-right: 10px;
+}
+.clear-tasks button:hover {
+  opacity: 0.9;
+}
+.clear-tasks button:active {
+  transform: translateY(2px);
 }
 
 /* Dark Mode Toggle */

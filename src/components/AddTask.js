@@ -27,6 +27,7 @@ const AddTask = ({
                 id: task.id,
                 name: task.name,
                 time: `${date.toLocaleTimeString()} ${date.toLocaleDateString()}`,
+                status: task.status,
               }
             : todo
         );
@@ -40,6 +41,7 @@ const AddTask = ({
               id: uniqid(),
               name: e.target.task.value,
               time: `${date.toLocaleTimeString()} ${date.toLocaleDateString()}`,
+              status: task.status || "Pending",
             },
             ...prevTasks,
           ];
@@ -64,6 +66,15 @@ const AddTask = ({
           color: darkMode && "#fff",
         }}
       />
+      <select
+        className="taskStatus"
+        name="status"
+        onChange={(e) => setTask({ ...task, status: e.target.value })}
+        value={task.status || "Pending"}
+      >
+        <option value="Pending">Pending</option>
+        <option value="Completed">Completed</option>
+      </select>
       {editMode ? <button>Edit</button> : <button>Add</button>}
     </form>
   );

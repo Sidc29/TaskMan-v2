@@ -21,11 +21,19 @@ const App = () => {
 
   useEffect(() => {
     if (darkMode) {
+      // Body Background Color Change
       document.body.style.backgroundColor = "#404040";
       document.body.style.backgroundImage = "none";
       document.querySelectorAll("input")[1].style.color = "#fff";
+      // Task Status Select Background
+      document.querySelector("select").style.backgroundColor = "#404040";
+      document.querySelector("option").style.color = "#fff";
     } else {
+      // Body Background Color Change
       document.body.style.backgroundColor = "#f5e9cf";
+      // Task Status Select Background
+      document.querySelector("select").style.backgroundColor = "#fff";
+      document.querySelector("option").style.color = "grey";
     }
 
     localStorage.setItem("darkMode", JSON.stringify(darkMode));

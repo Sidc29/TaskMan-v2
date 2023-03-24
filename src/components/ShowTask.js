@@ -37,6 +37,7 @@ const ShowTask = ({
   };
 
   const editTask = (id) => {
+    window.scrollTo(0, 0);
     setEditMode(true);
     const selectedTask = taskList.find((todo) => todo.id === id);
     setTask(selectedTask);

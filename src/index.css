@@ -94,7 +94,7 @@ input::placeholder {
   background-color: #e96479;
   color: #f5e9cf;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
 }
 
@@ -190,6 +190,10 @@ input::placeholder {
 }
 .clear-tasks button:active {
   transform: translateY(2px);
+}
+.clearBtns {
+  display: flex;
+  flex-direction: row;
 }
 
 .tasks-filter {

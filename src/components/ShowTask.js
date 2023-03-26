@@ -4,6 +4,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import PendingActionsIcon from "@mui/icons-material/PendingActions";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
+
 import _ from "lodash";
 
 const ShowTask = ({
@@ -15,7 +16,7 @@ const ShowTask = ({
   filterTasks,
   setFilterTasks,
 }) => {
-  // TASKS LENGTH
+  // TASKS LENGTH FUNCTIONS (Returns the length of tasks)
   const pendingTasks = () => {
     const result = taskList.filter((todo) => todo.status === "Pending");
     return result.length;
@@ -43,7 +44,7 @@ const ShowTask = ({
     setTask(selectedTask);
   };
 
-  const handleClearTasks = () => {
+  const clearAllTasks = () => {
     let warning = "Are you sure you want to clear all tasks?";
     // eslint-disable-next-line no-restricted-globals
     if (confirm(warning) === true) {
@@ -52,7 +53,18 @@ const ShowTask = ({
       return;
     }
   };
-
+  const clearCompletedTasks = () => {
+    let warning = "Are you sure you want to clear all completed tasks?";
+    // eslint-disable-next-line no-restricted-globals
+    if (confirm(warning) === true) {
+      const completedTasks = taskList.filter(
+        (todo) => todo.status !== "Completed"
+      );
+      setTaskList(completedTasks);
+    } else {
+      return;
+    }
+  };
   const filteredTasks = taskList.filter((task) => {
     if (filterTasks === "All") {
       return true;
@@ -74,7 +86,12 @@ const ShowTask = ({
           <h3 style={{ color: darkMode && "#b3b3b3" }}>No Tasks for now</h3>
         )}
         {taskList.length > 0 && (
-          <button onClick={handleClearTasks}>Clear tasks</button>
+          <div className="clearBtns">
+            {completedTasks() > 0 && (
+              <button onClick={clearCompletedTasks}>Clear Completed</button>
+            )}
+            <button onClick={clearAllTasks}>Clear All</button>
+          </div>
         )}
       </div>
       {taskList.length > 0 && (

@@ -67,6 +67,7 @@ const AddTask = ({
         }}
       />
       <select
+        id="task-status"
         className="taskStatus"
         name="status"
         onChange={(e) => setTask({ ...task, status: e.target.value })}

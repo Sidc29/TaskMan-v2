@@ -93,6 +93,16 @@ const App = () => {
           />
         </div>
       </div>
+      <footer>
+        Made by{" "}
+        <a
+          href="http://shiddharth-portfolio.vercel.app/"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Siddharth
+        </a>
+      </footer>
     </>
   );
 };

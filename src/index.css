@@ -11,7 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 h1 {
@@ -88,12 +88,11 @@ input::placeholder {
 }
 
 .input-container button {
-  padding: 14px;
+  padding: 8px;
   border-radius: 5px;
   border: none;
   background-color: #e96479;
   color: #f5e9cf;
-  font-size: 18px;
   font-weight: 600;
   cursor: pointer;
 }
@@ -268,6 +267,20 @@ input::placeholder {
 
 .fa-sun {
   color: yellow;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  color: rgb(134, 134, 134);
+}
+
+footer a {
+  text-decoration: none;
+  font-weight: 500;
+  color: rgb(166, 166, 166);
 }
 
 @media screen and (max-width: 768px) {

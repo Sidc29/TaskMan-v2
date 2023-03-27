@@ -140,7 +140,7 @@ const ShowTask = ({
                 style={{
                   marginTop: "6px",
                   color:
-                    todoItem.status === "Completed" ? "#249e49" : "#cf2d3e",
+                    todoItem.status === "Completed" ? "#249e49" : "#d9b40f",
                 }}
               >
                 {todoItem.status === "Completed" ? (
@@ -156,7 +156,7 @@ const ShowTask = ({
                 title="Edit task"
                 className="editBtn"
               >
-                <EditIcon sx={{ color: "#e8bb59", fontSize: "30px" }} />
+                <EditIcon sx={{ color: "#27ba5f", fontSize: "30px" }} />
               </button>
               <button
                 onClick={() => deleteTask(todoItem.id)}

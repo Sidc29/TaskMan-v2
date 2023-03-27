@@ -1,6 +1,9 @@
 import React from "react";
 import uniqid from "uniqid";
 
+import AddIcon from "@mui/icons-material/Add";
+import EditIcon from "@mui/icons-material/Edit";
+
 const AddTask = ({
   task,
   setTask,
@@ -80,7 +83,15 @@ const AddTask = ({
           Completed
         </option>
       </select>
-      {editMode ? <button>Edit</button> : <button>Add</button>}
+      {editMode ? (
+        <button title="Edit Task">
+          <EditIcon sx={{ fontSize: "28px" }} />
+        </button>
+      ) : (
+        <button title="Add Task">
+          <AddIcon sx={{ fontSize: "28px" }} />
+        </button>
+      )}
     </form>
   );
 };

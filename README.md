@@ -1,5 +1,5 @@
 
-# Introduction
+# TaskMan - A Complete Task Manager
 
 TaskMan is a task manager react app designed to help users keep track of their daily tasks. The app provides an easy-to-use interface that allows users to add, delete, and edit tasks with ease. The app also features task filtering, making it easy for users to find pending or completed tasks. Additionally, the app includes a dark mode option, making it easier to use in low-light environments.
 

@@ -12,7 +12,7 @@ https://task-man-v2.vercel.app/
 
 To install TaskMan, you need to have [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) installed on your computer. Follow the steps below to install TaskMan:
 
-1. Clone this repository to your local machine using the following command: git clone https://github.com/your-username/TaskMan.git
+1. Clone this repository to your local machine using the following command: git clone https://github.com/sid/TaskMan-v2.git
 
 2. Change into the TaskMan directory: cd TaskMan
 

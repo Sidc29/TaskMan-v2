@@ -3,6 +3,7 @@ import uniqid from "uniqid";
 
 import AddIcon from "@mui/icons-material/Add";
 import EditIcon from "@mui/icons-material/Edit";
+import Tooltip from '@mui/material/Tooltip';
 
 const AddTask = ({
   task,
@@ -84,12 +85,16 @@ const AddTask = ({
         </option>
       </select>
       {editMode ? (
-        <button title="Edit Task">
-          <EditIcon sx={{ fontSize: "28px" }} />
+        <button>
+          <Tooltip title="Edit Task" arrow>
+            <EditIcon sx={{ fontSize: "28px" }} />
+          </Tooltip>
         </button>
       ) : (
-        <button title="Add Task">
-          <AddIcon sx={{ fontSize: "28px" }} />
+        <button>
+          <Tooltip title="Add a new Task" arrow>
+            <AddIcon sx={{ fontSize: "28px" }} />
+          </Tooltip>
         </button>
       )}
     </form>

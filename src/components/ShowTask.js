@@ -4,6 +4,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import PendingActionsIcon from "@mui/icons-material/PendingActions";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
+import Tooltip from '@mui/material/Tooltip';
 
 import _ from "lodash";
 
@@ -88,9 +89,13 @@ const ShowTask = ({
         {taskList.length > 0 && (
           <div className="clearBtns">
             {completedTasks() > 0 && (
-              <button onClick={clearCompletedTasks}>Clear Completed</button>
+              <Tooltip title="Clear all completed tasks" arrow>
+                <button onClick={clearCompletedTasks}>Clear Completed</button>
+              </Tooltip>
             )}
-            <button onClick={clearAllTasks}>Clear All</button>
+            <Tooltip title="Clear all tasks" arrow>
+              <button onClick={clearAllTasks}>Clear All</button>
+            </Tooltip>
           </div>
         )}
       </div>
@@ -153,17 +158,19 @@ const ShowTask = ({
             <div>
               <button
                 onClick={() => editTask(todoItem.id)}
-                title="Edit task"
                 className="editBtn"
               >
-                <EditIcon sx={{ color: "#27ba5f", fontSize: "30px" }} />
+                <Tooltip title="Edit Task" arrow>
+                  <EditIcon sx={{ color: "#27ba5f", fontSize: "30px" }} />
+                </Tooltip>
               </button>
               <button
                 onClick={() => deleteTask(todoItem.id)}
-                title="Delete task"
                 className="deleteBtn"
               >
-                <DeleteIcon sx={{ color: "#E04242", fontSize: "30px" }} />
+                <Tooltip title="Delete Task" arrow>
+                  <DeleteIcon sx={{ color: "#E04242", fontSize: "30px" }} />
+                </Tooltip>
               </button>
             </div>
           </div>
